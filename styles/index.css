@@ -1,0 +1,257 @@
+@import url("./fonts.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --color-secondary-900: rgb(17, 24, 39);
+  --color-secondary-800: rgb(31, 41, 55);
+  --color-secondary-700: rgb(55, 65, 81);
+  --color-secondary-600: rgb(75, 85, 99);
+  --color-secondary-500: rgb(107, 114, 128);
+  --color-secondary-400: rgb(156, 163, 175);
+  --color-secondary-300: rgb(209, 213, 219);
+  --color-secondary-200: rgb(229, 231, 235);
+  --color-secondary-100: rgb(243, 244, 246);
+  --color-secondary-50: rgb(249, 250, 251);
+  --color-secondary-0: rgb(255, 255, 255);
+
+  --color-primary-900: rgb(77, 112, 255);
+  --color-primary-800: rgb(92, 124, 255);
+  --color-primary-700: rgb(92, 124, 255);
+  --color-primary-600: rgb(128, 153, 255);
+  --color-primary-500: rgb(146, 167, 255);
+  --color-primary-400: rgb(164, 182, 255);
+  --color-primary-300: rgb(183, 197, 255);
+  --color-primary-200: rgb(201, 211, 255);
+  --color-primary-100: rgb(219, 226, 255);
+  --color-primary-50: rgb(228, 233, 255);
+
+  --border-radius-tiny: 3px;
+  --border-radius-sm: 5px;
+  --border-radius-md: 7px;
+  --border-radius-lg: 9px;
+
+  --color-success: rgb(0, 192, 115);
+  --color-warning: rgb(255, 153, 0);
+  --color-error: rgb(255, 71, 87);
+  --color-red-700: rgb(185, 28, 28);
+  --color-red-800: rgb(153, 27, 27);
+  --color-red-500: rgb(239, 68, 68);
+  --color-red-300: rgb(252, 165, 165);
+  --color-red-100: rgb(254, 226, 226);
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--color-secondary-100);
+}
+
+body {
+  font-family: Vazirmatn;  
+  background-color: var(--color-secondary-100);
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.content {
+  min-height: 100vh;
+}
+
+
+
+.container {
+  max-width: 1200px;
+  /* 1170 */
+  margin: 3rem auto;
+  padding: 2rem;
+
+}
+
+
+
+/* button */
+
+.btn {
+  cursor: pointer;
+  outline: none;
+  border-radius: var(--border-radius-md);
+  padding: 2rem 2.5rem;
+  font-family: Vazirmatn;
+  font-weight: 400;
+  border: 0;
+  text-align: center;
+  font-size: 1.5rem;
+   /* min-width: 300px;
+   margin-top: 25px; */
+
+}
+
+/* .btn--block {
+  width: 60%;
+  font-size: 3.5rem;
+} */
+
+
+.btn-header {
+  width: 50%;
+    /* width: 100%; */
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  margin: 4rem 7rem;
+}
+
+.btn-primmary {
+  background-color: var(--color-primary-800);
+  color: var(--color-secondary-0);
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+     font-size: 1.7rem;
+  }
+}
+
+
+.main-header {
+  font-family: Vazirmatn;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h2 {
+  color: var(--color-secendry-600);
+  font-size: 3.5rem;
+  line-height: 4.6rem;
+  opacity: 50%;
+}
+
+
+/* search */
+
+.search-header {
+  min-width: 60%;
+  margin-top: 4rem;
+
+  /* position: relative; */
+}
+
+
+.icon {
+  position: absolute;
+  right: 64%;
+  bottom: 28%;
+  cursor: pointer;
+  color: var(--color-secondary-400);
+  font-size: 1.5rem;
+}
+
+
+#search {
+background-color: var(--color-secondary-0);
+padding: 0 2rem;
+border: 0;
+outline: 0;
+width: 50%;
+font-family: Vazirmatn;
+height: 50px;
+border: 1px solid var(--color-secondary-400);
+border-radius: 18px;
+font-size: 1.6rem;
+margin-right: 10rem;
+}
+
+
+#search:focus {
+  border: 2px solid var(--color-primary-900);
+}
+
+.green {
+  color: var(--color-success); 
+}
+
+.red {
+  color: var(--color-warning);
+}
+
+.main-content {
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0  7px 10px 0 var(--color-secondary-200);
+  background-color: var(--color-secondary-0);
+  border: 1px solid var(--color-secondary-100);
+  padding: 3px;
+}
+
+
+.content p {
+  padding: 2rem 2rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: Vazirmatn;
+  margin-bottom: 2rem;
+  color: var(--color-secendry-400);
+  opacity: 0.7;
+
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* table */
+
+.content-table {
+  border-collapse: collapse;
+  width: 100%;
+  color: var(--color-secondary-700);
+  margin-bottom: 5rem;
+  border: 1px solid var(--color-secondary-100);
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+
+}
+
+.content-table tr {
+  box-shadow: 0 1px 1px var(--color-secondary-200);
+  border: 1px solid var(--color-secondary-100);
+
+}
+
+.content-table th , .content-table td {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+th {
+  background-color: var(--color-secondary-400);
+  color: var(--color-secondary-0);
+  font-size: 1.5rem;
+
+}
+
+
+
+td:nth-child(3) {
+  font-weight: bold;
+}
+
+
+
+
+
+
+/* 270 no change */
+
+/* table 380 to down bad */
