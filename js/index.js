@@ -63,13 +63,14 @@ searchInput.addEventListener("input", (e) => {
     .catch((err) => console.log(err));
 });
 
-function sortPrice() {
-  const order = "desc";
-  console.log(order);
-  axios
-    .get(`http://localhost:3000/transactions?_sort=price&_order=desc`)
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err));
+// function sortPrice() {
+//   const order = "desc";
+//   console.log(order);
+//   axios
+//     .get(`http://localhost:3000/transactions?_sort=price&_order=desc`)
+//     .then((res) => console.log(res.data))
+//     .catch((err) => console.log(err));
 
-  //   sortOrder = sortOrder === "desc" ? "asc" : "desc";
-}
+//   //   sortOrder = sortOrder === "desc" ? "asc" : "desc";
+// }
+

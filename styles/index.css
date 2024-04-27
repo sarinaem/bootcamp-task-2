@@ -89,7 +89,7 @@ html {
   font-weight: 400;
   border: 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
    /* min-width: 300px;
    margin-top: 25px; */
 
@@ -102,12 +102,13 @@ html {
 
 
 .btn-header {
-  width: 50%;
-    /* width: 100%; */
+  /* width: 70%; */
+  width: 100%;
   display: flex;
   justify-content: center ;
   align-items: center;
-  margin: 4rem 7rem;
+  margin: 4rem 2rem;
+
 }
 
 .btn-primmary {
@@ -146,13 +147,24 @@ html {
 }
 
 
-.icon {
-  position: absolute;
-  right: 64%;
-  bottom: 28%;
+.search-header {
+
   cursor: pointer;
   color: var(--color-secondary-400);
   font-size: 1.5rem;
+  
+}
+
+.search-header > i {
+  position: absolute;
+  /* top: 4px; */
+  top: 68%;
+  /* top: 10px; */
+  right: 55%;
+  outline: none;
+  border: 0;
+  color: var(--color-secondary-400);
+  cursor: pointer;
 }
 
 
