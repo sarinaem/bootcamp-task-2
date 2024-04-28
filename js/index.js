@@ -4,7 +4,6 @@ const button = document.querySelector(".btn");
 const searchInput = document.querySelector("#search");
 const transactionContent = document.querySelector(".transaction-content");
 
-
 button.addEventListener("click", () => {
   creatTable(allTransactionDta);
   getTransactions();
@@ -40,22 +39,32 @@ function creatTable(transactions) {
       default:
         typeClass = "";
     }
+    
+    const data = new Date(transaction.date).toLocaleDateString("fa", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    //ADD TABLE
     transactionDta.innerHTML += `<tr>
         <td>${transaction.id}</td>
         <td class="${typeClass}">${transaction.type}</td>
         <td>${transaction.price}</td>
         <td>${transaction.refId}</td>
-        <td>${transaction.date}</td>
+        <td>${data}</td>
       </tr>`;
   });
 }
+
 getTransactions();
 
 searchInput.addEventListener("input", (e) => {
   const query = e.target.value;
   console.log(query);
   axios
-
     .get(`http://localhost:3000/transactions?refId_like=${query}`)
     .then((res) => {
       console.log(res.data);
@@ -63,7 +72,6 @@ searchInput.addEventListener("input", (e) => {
     })
     .catch((err) => console.log(err));
 });
-
 
 let order = "desc";
 
@@ -73,15 +81,33 @@ function sortPrice() {
   } else {
     order = "desc";
   }
-    axios
-  .get(`http://localhost:3000/transactions?_sort=price&_order=${order}`)
-  .then((res) =>   {
-    allTransactionDta = res.data;
-    creatTable(allTransactionDta);
-  })
+  axios
+    .get(`http://localhost:3000/transactions?_sort=price&_order=${order}`)
+    .then((res) => {
+      allTransactionDta = res.data;
+      creatTable(allTransactionDta);
+    })
     .catch((err) => console.log(err));
-
 }
 
 const priceSort = document.querySelector("#price-sort");
 priceSort.addEventListener("click", sortPrice);
+
+let dateOrder = "desc";
+function sortDate() {
+  if (dateOrder === "desc") {
+    dateOrder = "asc";
+  } else {
+    dateOrder = "desc";
+  }
+  axios
+    .get(`http://localhost:3000/transactions?_sort=date&_order=${dateOrder}`)
+    .then((res) => {
+      allTransactionDta = res.data;
+      creatTable(allTransactionDta);
+    })
+    .catch((err) => console.log(err));
+}
+
+const dateSort = document.querySelector("#date-sort");
+dateSort.addEventListener("click", sortDate);
