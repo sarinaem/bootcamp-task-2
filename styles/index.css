@@ -262,7 +262,9 @@ td:nth-child(3) {
 
 
 
-
+.sort-icon {
+  transform: rotate(180deg);
+}
 
 /* 270 no change */
 

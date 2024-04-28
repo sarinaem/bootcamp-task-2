@@ -4,6 +4,7 @@ const button = document.querySelector(".btn");
 const searchInput = document.querySelector("#search");
 const transactionContent = document.querySelector(".transaction-content");
 
+
 button.addEventListener("click", () => {
   creatTable(allTransactionDta);
   getTransactions();
@@ -63,14 +64,24 @@ searchInput.addEventListener("input", (e) => {
     .catch((err) => console.log(err));
 });
 
-// function sortPrice() {
-//   const order = "desc";
-//   console.log(order);
-//   axios
-//     .get(`http://localhost:3000/transactions?_sort=price&_order=desc`)
-//     .then((res) => console.log(res.data))
-//     .catch((err) => console.log(err));
 
-//   //   sortOrder = sortOrder === "desc" ? "asc" : "desc";
-// }
+let order = "desc";
 
+function sortPrice() {
+  if (order === "desc") {
+    order = "asc";
+  } else {
+    order = "desc";
+  }
+    axios
+  .get(`http://localhost:3000/transactions?_sort=price&_order=${order}`)
+  .then((res) =>   {
+    allTransactionDta = res.data;
+    creatTable(allTransactionDta);
+  })
+    .catch((err) => console.log(err));
+
+}
+
+const priceSort = document.querySelector("#price-sort");
+priceSort.addEventListener("click", sortPrice);
